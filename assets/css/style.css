@@ -1,0 +1,59 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+hr {
+  background-color:#FEF69B;
+}
+a:hover {cursor: cell;}
+button:hover {cursor: cell;}
+
+.logo {
+  text-shadow: 1.5px 1.5px #48aabd;
+  font-size: 50px;
+}
+
+.introContainer {
+  background-color: rgba(253, 253, 242, 0.918);
+  text-align: center;
+  width: 500px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;  
+  border: 2px inset #48aabd;
+  padding: 25px 25px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.mainContainer {
+  background-color: rgba(253, 253, 242, 0.918);
+  margin-top: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;  
+  border: 2px inset #48aabd;
+  padding: 25px 25px;
+}
+
+#submit {
+  width: 143px;
+}
+
+#submit:hover {cursor: cell;}
+
+.modal-content {
+  background-color: rgba(253, 253, 242, 0.918);
+  text-align: center;
+  width: 500px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;  
+  border: 2px inset #48aabd;
+  padding: 25px 25px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
