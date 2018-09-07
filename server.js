@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8081;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//route setup for sever to naviage through
+//route setup for server to naviage through
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
