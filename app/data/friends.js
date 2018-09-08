@@ -2,8 +2,8 @@
 
 var friendsArray         = [
 {
-    "name":"Gabe",
-    "photo":"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    "name":"Jian",
+    "photo":"url(https://i.imgur.com/Bo4t2kp.jpg?1)",
     "scores":[
         "4",
         "3",
@@ -19,23 +19,23 @@ var friendsArray         = [
   },
   {
     "name":"Jessica",
-    "photo":"https://cdn.pixabay.com/photo/2016/01/18/05/09/face-1146038_960_720.jpg",
+    "photo":"https://i.imgur.com/eB2mojH.jpg",
     "scores":[
+       "5",
+       "5",
+       "5",
+       "5",
+       "5",
        "4",
        "5",
        "5",
-       "2",
-       "3",
-       "1",
-       "3",
-       "4",
-       "1",
-       "2"
+       "5",
+       "5"
     ]
  },
  {
     "name":"Frank",
-    "photo":"https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    "photo":"https://i.imgur.com/0OgQXC5.jpg",
     "scores":[
        "3",
        "4",
@@ -51,7 +51,7 @@ var friendsArray         = [
  },
  {
     "name":"Samuel",
-    "photo":"https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?cs=srgb&dl=adult-beach-beard-736716.jpg&fm=jpg",
+    "photo":"https://i.imgur.com/D0F3Wvk.jpg",
     "scores":[
        "2",
        "3",
@@ -67,39 +67,55 @@ var friendsArray         = [
  },
  {
      "name":"Renee",
-     "photo":"https://cdn.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_960_720.jpg",
+     "photo":"https://i.imgur.com/xuDAxSj.jpg",
      "scores":[
+        "3",
         "5",
-        "5",
-        "5",
-        "5",
-        "5",
-        "5",
-        "5",
-        "5",
+        "2",
+        "2",
+        "3",
+        "2",
+        "1",
+        "4",
         "5",
         "5"
      ]
  },
  {
+    "name":"Jasmine",
+    "photo":"https://i.imgur.com/TDv39A1.jpg",
+    "scores":[
+       "3",
+       "3",
+       "5",
+       "4",
+       "4",
+       "2",
+       "3",
+       "3",
+       "4",
+       "3"
+    ]
+  },
+ {
      "name":"Grace",
-     "photo":"https://cdn.pixabay.com/photo/2018/02/27/22/02/woman-3186741_960_720.jpg",
+     "photo":"https://i.imgur.com/Fl4JkDf.jpg",
      "scores":[
+        "3",
         "1",
+        "5",
+        "3",
+        "2",
         "1",
-        "1",
-        "1",
         "2",
+        "3",
         "2",
-        "2",
-        "2",
-        "2",
-        "2"
+        "1"
      ]
   },
   {
     "name":"Rutger",
-    "photo":"https://pixabay.com/en/person-man-portrait-business-man-93459/",
+    "photo":"https://i.imgur.com/MHU84dL.jpg",
     "scores":[
        "1",
        "1",
@@ -111,6 +127,54 @@ var friendsArray         = [
        "1",
        "1",
        "1"
+    ]
+  },
+  {
+    "name":"Willis",
+    "photo":"https://i.imgur.com/78ubiYw.jpg",
+    "scores":[
+       "5",
+       "5",
+       "1",
+       "2",
+       "3",
+       "2",
+       "1",
+       "1",
+       "3",
+       "1"
+    ]
+  },
+  {
+    "name":"George",
+    "photo":"https://i.imgur.com/95dZbUN.jpg",
+    "scores":[
+       "2",
+       "1",
+       "2",
+       "1",
+       "3",
+       "1",
+       "5",
+       "1",
+       "1",
+       "1"
+    ]
+  },
+  {
+    "name":"Juanita",
+    "photo":"https://i.imgur.com/edQlzHX.jpg",
+    "scores":[
+       "5",
+       "2",
+       "4",
+       "5",
+       "3",
+       "1",
+       "3",
+       "2",
+       "4",
+       "3"
     ]
   }
 ];

@@ -3,29 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
+ 
   <title>Friend Finder - Survey</title>
 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+<!-- BootStrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<!-- Font Awesome Glyphicons -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<!-- CSS-->
+<link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
   crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
-    <!-- Font Awesome Glyphicons -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  
-  <link href="../../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body class="survey-body">
   
   <div class="container">
     <div class="mainContainer">
@@ -71,7 +73,6 @@
     </select>
     <hr>
 
-
     <h3><b>Question 3</b></h3>
     <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
     <select class="userChoice" id="q3">
@@ -83,7 +84,6 @@
       <option value="5">5</option>
     </select>
     <hr>
-
 
     <h3><b>Question 4</b></h3>
     <h4>You rarely do something just out of sheer curiosity.</h4>
@@ -192,7 +192,7 @@
 
         <div class="modal-body">
           <h2 id="matchName"></h2>
-          <img id="matchImage" src="" width="350px" height="350px" alt="">
+          <img id="matchImage" src="" class="img-responsive" width="350px" height="400px" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -207,49 +207,47 @@
 <script type="text/javascript">
 
   $("#submit").on("click", function(event) {
-    event.preventDefault();
-   
-    console.log('clicked')
-    //puts the number of empty score fields into a variable
-    var emptyScore = $('option[value=""]:checked');
+ 
+      //variable that stores the number of blank score values
+      var emptyScore = $('option[value=""]:checked');
+      var empty = false;
 
-    console.log(emptyScore.length)
+      //checks for to see if any form values are empty
+      if ($("#name").val() === "" || $("#photo").val() === "") {
+        empty = true;
 
-    if (emptyScore.length === 0 && ($('#name').val() !== "") && ($('#photo').val() !== "")) {
-      console.log(emptyScore.length);
-      
-            var userData = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
-            }
-    
-            $.post("/api/friends", userData, function(data) {
-                // console.log(data)
-              
-                $("#modalResults").modal("toggle");
-                $("#matchName").text(data.name);
-                $("#matchImage").attr("src", data.photo);
-               
-            });
+      } else if (emptyScore.length !== 0) {
+        empty = true;
 
-    } else {
+      }
 
-      $("#modalResults").modal("toggle");
-      $(".modal-title").html("")
-      $(".modal-body").html("<h3>In order to submit, you need to fill everything out.</h3>" + "<br>" + "<h4> Please answer all fields to continue.</h4>");
+      //if no form values are empty, a modal with the best friend match toggles
+      if (empty === false) {
+
+      var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+        }
+
+      $.post("/api/friends", userData, function(data) {
      
-    }
-})
+              $("#modalResults").modal("toggle");
+              $("#matchName").text(data.name);
+              $("#matchImage").attr("src", data.photo);
+
+      });
+
+      //if values are empty an alert toggles
+      } else {
+          alert("In order to submit, you need to fill everything out. Please answer all fields to continue.")
+          // $("#modalResults").modal("toggle");
+          // $(".modal-title").html("")
+          // $(".modal-body").html("<h3>In order to submit, you need to fill everything out.</h3>" + "<br>" + "<h4> Please answer all fields to continue.</h4>");
+      }
+
+  })
 
 </script>
 
-<style>
-
-    body {
-      background-image : url(../../assets/images/arthur-poulin-96074-unsplash.jpg);
-      background-size:cover;
-    }
-    
-  </style>
 </html>
